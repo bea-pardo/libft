@@ -19,13 +19,7 @@ El proyecto incluye un `Makefile` con las reglas obligatorias exigidas por la es
   ```bash
   make
   ```
-  Esto compilará los 43 archivos fuente (incluyendo las listas enlazadas de la Parte 3) y generará el archivo `libft.a`.
-
-* **Regla bonus:**
-  ```bash
-  make bonus
-  ```
-  En la versión 19.3 del subject, las listas enlazadas forman parte de la sección obligatoria (Parte 3). La regla `bonus` compila la librería completa para total compatibilidad.
+  Esto compilará los 43 archivos fuente y generará el archivo `libft.a`.
 
 * **Limpiar archivos objeto (`.o`):**
   ```bash
@@ -130,8 +124,3 @@ Conjunto de utilidades para crear y manipular listas enlazadas utilizando la est
 * Documentación de funciones BSD (`strlcpy`, `strlcat`).
 * Estándar ISO/IEC 9899 (C99) y especificaciones POSIX.
 * Normas de estilo de 42 (La Norma versión 4).
-
-### Uso de Inteligencia Artificial (IA)
-En cumplimiento de las instrucciones sobre IA del Capítulo III y V del sujeto:
-* **¿En qué tareas se utilizó?**: La IA se utilizó como herramienta de apoyo en pair-programming para auditoría de código, detección de casos límite habituales en los testers (como punteros nulos con tamaño cero en `ft_strnstr` y `ft_strlcat`, o el desbordamiento de `INT_MIN` en `ft_atoi`), y verificación del cumplimiento de las reglas de formato de La Norma (límites de 25 líneas, ausencia de operadores ternarios o sentencias for, y alineación de variables).
-* **¿En qué partes no se utilizó para atajos?**: La lógica fundamental, los algoritmos de recorrido, la separación modular de archivos y la comprensión de cada función fueron asimilados y razonados individualmente para garantizar la defensa completa del proyecto durante la evaluación entre pares.
