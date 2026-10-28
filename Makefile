@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: bpardo-l <bpardo-l@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/21 20:44:28 by bpardo-l          #+#    #+#              #
-#    Updated: 2026/10/28 17:21:00 by bpardo-l         ###   ########.fr        #
+#    Updated: 2026/10/28 17:41:12 by bpardo-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,4 +45,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re
