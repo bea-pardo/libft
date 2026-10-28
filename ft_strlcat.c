@@ -6,7 +6,7 @@
 /*   By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:49:19 by bpardo-l          #+#    #+#             */
-/*   Updated: 2026/10/21 20:49:19 by bpardo-l         ###   ########.fr       */
+/*   Updated: 2026/10/22 17:52:00 by bpardo-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	dest_index;
+	size_t	src_index;
+	size_t	dest_length;
+	size_t	src_length;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dstsize <= dst_len)
-		return (dstsize + src_len);
-	i = dst_len;
-	j = 0;
-	while (src[j] != '\0' && i < dstsize - 1)
+	src_length = ft_strlen(src);
+	dest_length = 0;
+	while (dest_length < dstsize && dst[dest_length] != '\0')
+		dest_length++;
+	if (dstsize <= dest_length)
+		return (dstsize + src_length);
+	dest_index = dest_length;
+	src_index = 0;
+	while (src[src_index] != '\0' && (dest_index + 1) < dstsize)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		dst[dest_index] = src[src_index];
+		dest_index++;
+		src_index++;
 	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+	dst[dest_index] = '\0';
+	return (dest_length + src_length);
 }

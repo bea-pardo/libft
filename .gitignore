@@ -1,0 +1,15 @@
+# Archivos compilados y librerias
+*.o
+*.a
+.bonus
+a.out
+*.exe
+
+# Archivos de prueba locales
+# Archivos de prueba y guias locales (no se entregan a 42)
+main.c
+GUIA_ESTUDIO_LIBFT.md
+
+# Documentos PDF locales (no se entregan a 42)
+# Documentos PDF locales
+*.pdf

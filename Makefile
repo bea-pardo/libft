@@ -6,7 +6,7 @@
 #    By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/21 20:44:28 by bpardo-l          #+#    #+#              #
-#    Updated: 2026/10/21 20:44:28 by bpardo-l         ###   ########.fr        #
+#    Updated: 2026/10/22 18:21:00 by bpardo-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,11 +40,14 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
 
-bonus:		$(OBJS) $(BONUS_OBJS)
+bonus:		.bonus
+
+.bonus:		$(OBJS) $(BONUS_OBJS)
 			ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+			@touch .bonus
 
 clean:
-			$(RM) $(OBJS) $(BONUS_OBJS)
+			$(RM) $(OBJS) $(BONUS_OBJS) .bonus
 
 fclean:		clean
 			$(RM) $(NAME)

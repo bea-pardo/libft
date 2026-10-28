@@ -6,7 +6,7 @@
 /*   By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:52:24 by bpardo-l          #+#    #+#             */
-/*   Updated: 2026/10/21 20:52:24 by bpardo-l         ###   ########.fr       */
+/*   Updated: 2026/10/26 19:02:00 by bpardo-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
-	size_t			i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	size_t			index;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	index = 0;
+	while (index < n)
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		i++;
+		if (ptr1[index] != ptr2[index])
+			return (ptr1[index] - ptr2[index]);
+		index++;
 	}
 	return (0);
 }

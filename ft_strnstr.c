@@ -6,7 +6,7 @@
 /*   By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:52:41 by bpardo-l          #+#    #+#             */
-/*   Updated: 2026/10/21 20:52:41 by bpardo-l         ###   ########.fr       */
+/*   Updated: 2026/10/22 18:15:00 by bpardo-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	haystack_idx;
+	size_t	needle_idx;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
-	i = 0;
-	while (haystack[i] != '\0' && i < len)
+	haystack_idx = 0;
+	while (haystack_idx < len && haystack[haystack_idx] != '\0')
 	{
-		j = 0;
-		while (needle[j] == haystack[i + j] && (i + j) < len)
+		needle_idx = 0;
+		while ((haystack_idx + needle_idx) < len
+			&& haystack[haystack_idx + needle_idx] == needle[needle_idx])
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&haystack[i]);
-			j++;
+			if (needle[needle_idx + 1] == '\0')
+				return ((char *)&haystack[haystack_idx]);
+			needle_idx++;
 		}
-		i++;
+		haystack_idx++;
 	}
 	return (NULL);
 }

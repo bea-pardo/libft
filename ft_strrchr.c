@@ -6,7 +6,7 @@
 /*   By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 20:51:18 by bpardo-l          #+#    #+#             */
-/*   Updated: 2026/10/21 20:51:18 by bpardo-l         ###   ########.fr       */
+/*   Updated: 2026/10/22 17:55:00 by bpardo-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
+	char	*last_occurrence;
 
-	last = NULL;
+	last_occurrence = NULL;
 	while (*s)
 	{
 		if (*s == (char)c)
-			last = (char *)s;
+			last_occurrence = (char *)s;
 		s++;
 	}
 	if ((char)c == '\0')
 		return ((char *)s);
-	return (last);
+	return (last_occurrence);
 }
