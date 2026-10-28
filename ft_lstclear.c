@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bpardo-l <bpardo-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,27 +12,17 @@
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*new_node;
-	void	*new_content;
+	t_list	*temp_node;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new_list = NULL;
-	while (lst)
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		new_content = f(lst->content);
-		new_node = ft_lstnew(new_content);
-		if (!new_node)
-		{
-			del(new_content);
-			ft_lstclear(&new_list, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_list, new_node);
-		lst = lst->next;
+		temp_node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp_node;
 	}
-	return (new_list);
+	*lst = NULL;
 }

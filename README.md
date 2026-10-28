@@ -15,17 +15,17 @@ Al finalizar el proyecto, el código se empaqueta en una librería estática (`l
 ### 1. Compilación
 El proyecto incluye un `Makefile` con las reglas obligatorias exigidas por la escuela. Para compilar la librería, sitúate en la raíz del repositorio y ejecuta:
 
-* **Compilar la parte obligatoria:**
+* **Compilar la librería completa:**
   ```bash
   make
   ```
-  Esto compilará los archivos fuente obligatorios y generará el archivo `libft.a`.
+  Esto compilará los 43 archivos fuente (incluyendo las listas enlazadas de la Parte 3) y generará el archivo `libft.a`.
 
-* **Compilar incluyendo los Bonus (listas enlazadas):**
+* **Regla bonus:**
   ```bash
   make bonus
   ```
-  Compila tanto la parte obligatoria como las funciones de listas enlazadas dentro de `libft.a`. Esta regla está protegida para evitar *relinks* innecesarios.
+  En la versión 19.3 del subject, las listas enlazadas forman parte de la sección obligatoria (Parte 3). La regla `bonus` compila la librería completa para total compatibilidad.
 
 * **Limpiar archivos objeto (`.o`):**
   ```bash
@@ -108,7 +108,7 @@ Funciones que no forman parte de la `libc` tradicional o están diseñadas de fo
 
 ---
 
-### Parte 3: Listas enlazadas (Bonus)
+### Parte 3: Listas enlazadas
 Conjunto de utilidades para crear y manipular listas enlazadas utilizando la estructura `t_list`:
 
 * `ft_lstnew`: Crea un nuevo nodo inicializando su contenido y enlazando `next` a `NULL`.
